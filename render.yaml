@@ -1,0 +1,17 @@
+# Render Blueprint: one web service that serves the API and the built React app.
+# Render reads this file when you choose New -> Blueprint and select the repo.
+services:
+  - type: web
+    name: helpdeskhq
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: JWT_SECRET
+        generateValue: true
