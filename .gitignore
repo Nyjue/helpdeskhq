@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+client/node_modules/
+
+# build output
+client/dist/
+coverage/
+
+# local database and secrets
+data/
+*.sqlite
+.env
+.env.*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
